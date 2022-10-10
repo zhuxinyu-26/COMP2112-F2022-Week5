@@ -71,7 +71,7 @@ constructor(fullName: string="unknown name", contactNumber: string="no contact n
  */
 public toJSON():string
  {
-    return `${this.FullName}, ${this.ContactNumber}, ${this.EmailAddress} `;
+    return `${this.FullName},${this.ContactNumber},${this.EmailAddress}`;
  }
 /**
  *This method reads data from a comma-separated list and assigns it to class data member
@@ -79,10 +79,11 @@ public toJSON():string
  * @param {string} data
  * @memberof Contact
  */
-public fromJSON(data: any):void{
-    this.FullName=data.FullName;
-    this.ContactNumber=data.ContactNumber;
-    this.EmailAddress=data.EmailAddress;
+public fromJSON(data: string):void{
+    let stringArray: string[] = data.split(",");
+    this.FullName=stringArray[0];
+    this.ContactNumber=stringArray[1];
+    this.EmailAddress=stringArray[2];
  }
  //private methods
 }
