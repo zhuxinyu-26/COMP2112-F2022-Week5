@@ -1,9 +1,9 @@
 class Contact {
-    //private instance members (fields)
+    // private instance members (fields)
     fullName;
     contactNumber;
     emailAddress;
-    //public properties
+    // public properties
     get FullName() {
         return this.fullName;
     }
@@ -24,8 +24,8 @@ class Contact {
     }
     // constructor
     /**
-     * Creates an instance of Contact.
-     *
+     *Creates an instance of Contact.
+
      * @param {string} [fullName="unknown name"]
      * @param {string} [contactNumber="no contact number"]
      * @param {string} [emailAddress="unknown email address"]
@@ -36,31 +36,31 @@ class Contact {
         this.ContactNumber = contactNumber;
         this.EmailAddress = emailAddress;
     }
-    //pulic methods
+    // public methods
     /**
-     *This methos overrides the built-in toString method for the Contact class
+     * This method overrides the built-in toString method for the Contact class
      *
-     * @return {*}  {string}
+     * @returns {string}
      * @memberof Contact
      */
     toString() {
         let outputString = "";
-        outputString += `Full Name: ${this.FullName}\n`;
+        outputString += `Full Name     : ${this.FullName}\n`;
         outputString += `Contact Number: ${this.ContactNumber}\n`;
-        outputString += `Email Address: ${this.EmailAddress}`;
+        outputString += `Email Address : ${this.EmailAddress}\n`;
         return outputString;
     }
     /**
-     *This method converts class Data members to a comma-separated list compatible with JSON
+     * This method converts class Data Members to a comma-separated list compatible with JSON
      *
-     * @return {*}  {string}
+     * @returns {string}
      * @memberof Contact
      */
     toJSON() {
         return `${this.FullName},${this.ContactNumber},${this.EmailAddress}`;
     }
     /**
-     *This method reads data from a comma-separated list and assigns it to class data member
+     * This method reads data from a comma-separated list and assigns it to class Data Members
      *
      * @param {string} data
      * @memberof Contact
